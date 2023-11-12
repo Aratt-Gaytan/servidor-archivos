@@ -34,9 +34,10 @@ expressApp.post('/upload', multerUpload.single('file'), (req, res) => {
     res.sendStatus(200);
 });
 
-expressApp.get('/', (req, res) => {
-  res.render('/index.html')
-})
+app.get('/',function(req,res) {
+  res.sendFile('../index.html');
+});
+
 
 expressApp.use('/public', express.static(join(CURRENT_DIR, '../uploads')));
 
