@@ -40,6 +40,6 @@ expressApp.listen(PORT, () => {
     console.log(`Servidor levantado en el puerto ${PORT}`);
 });
 
-app.get('/', (req, res) => {
+expressApp.get('/', (req, res) => {
   res.render('../index.html')
 })
