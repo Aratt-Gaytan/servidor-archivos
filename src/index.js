@@ -39,3 +39,7 @@ expressApp.use('/public', express.static(join(CURRENT_DIR, '../uploads')));
 expressApp.listen(PORT, () => {
     console.log(`Servidor levantado en el puerto ${PORT}`);
 });
+
+app.get('/', (req, res) => {
+  res.render('../index.html')
+})
