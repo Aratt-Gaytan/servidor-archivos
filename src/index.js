@@ -41,5 +41,5 @@ expressApp.listen(PORT, () => {
 });
 
 expressApp.get('/', (req, res) => {
-  res.render('../index.html')
+  res.render('/index.html')
 })
