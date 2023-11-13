@@ -28,6 +28,10 @@ const multerUpload = multer({
 
 const expressApp = express();
 
+
+expressApp.use(express.static('/'));
+
+
 expressApp.post('/upload', multerUpload.single('file'), (req, res) => {
     console.log(req.file);
 
@@ -35,7 +39,7 @@ expressApp.post('/upload', multerUpload.single('file'), (req, res) => {
 });
 
 expressApp.get('/',function(req,res) {
-  res.sendFile('index.html');
+   res.sendFile(__dirname + '/index.html');
 });
 
 
