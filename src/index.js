@@ -37,9 +37,11 @@ expressApp.post('/upload', multerUpload.single('file'), (req, res) => {
     res.sendStatus(200);
 });
 
-expressApp.get('/',function(req,res) {
-   res.sendFile( '../index.html');
+expressApp.get('/', function(req, res) {
+    const indexPath = join(CURRENT_DIR, '../index.html');
+    res.sendFile(indexPath);
 });
+
 
 
 expressApp.use('/public', express.static(join(CURRENT_DIR, '../uploads')));
